@@ -2,7 +2,7 @@
 
 ## Description
 
-My program make professional looking readme files for GitHub repositories. It includes a Table of contents, license badges used, users email and GitHub link and how to use the program. To input your info you go through a list of prompts and enter the right info needed to populate the readme file.
+My program makes professional looking readme files for GitHub repositories. It includes a Table of contents, license badges used, users email and GitHub link and how to use the program. You input your info, you go through a list of prompts and enter the right info needed to populate the readme file.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,7 +17,7 @@ My program make professional looking readme files for GitHub repositories. It in
 
 ## Installation
 
-To instal the program download it to any program you need it and type node index.js to the terminal to start.
+To instal the program download the program to any program you need to apply a readme file. Then instal the inquirer library with npm i inquirer in the terminal. These steps will allow you to fully use its abilities.
 
 ## Usage
 
