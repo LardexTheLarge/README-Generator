@@ -51,7 +51,6 @@ function renderLicenseBadge(data) {
         badge = WordPress;
         break;
     }
-    console.log(data);
 
     return badge;
   }
@@ -88,7 +87,6 @@ function renderLicenseSection(data) {
         badgeDes = WordPressDes;
         break;
     }
-    console.log(data);
 
     return badgeDes;
   }
