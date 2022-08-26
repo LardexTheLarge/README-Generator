@@ -23,6 +23,10 @@ To instal the program download the program to any program you need to apply a re
 
 When node index.js is entered to the terminal then answer the questions prompted to the terminal and once the program logs Success! to the terminal that means it worked and made a readme file in your program.
 
+This is the markdown of what the readme will look like:
+![image](https://user-images.githubusercontent.com/100447639/186945644-865c839e-05dc-4147-9a5f-306d0b68384e.png)
+
+
 ## Credits
 
 I am the only developer involved.
