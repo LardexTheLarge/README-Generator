@@ -12,7 +12,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "Describe what your program does",
+    message: "Describe what your program does?",
     name: "description",
   },
   {
@@ -54,7 +54,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile() {
   inquirer.prompt(questions).then((data) => {
     fs.writeFile("README.md", markDown(data), (data) => {
       console.log("Success!");

@@ -1,3 +1,4 @@
+//badge image variables
 const apache =
   "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
 const gnu =
@@ -11,32 +12,48 @@ const Rust =
 const WordPress =
   "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (license == null) {
+//badge description variables
+const apacheDes =
+  "A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.";
+const gnuDes =
+  "Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.";
+const npmPackDes =
+  "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.";
+const openBSD_Des =
+  "A permissive license lets people do anything with your code with proper attribution and without warranty. The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.";
+const RustDes =
+  "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.";
+const WordPressDes =
+  "Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.";
+
+function renderLicenseBadge(data) {
+  if (data == "") {
     return "";
   } else {
-    switch (license) {
-      case data.license[0]:
-        apache = data.license;
+    var badge = "";
+    switch (data.license) {
+      case "Apache":
+        badge = apache;
         break;
-      case data.license[1]:
-        gnu = data.license;
+      case "GNU":
+        badge = gnu;
         break;
-      case data.license[2]:
-        npmPack = data.license;
+      case "npm packages":
+        badge = npmPack;
         break;
-      case data.license[3]:
-        openBSD = data.license;
+      case "OpenBSD":
+        badge = openBSD;
         break;
-      case data.license[4]:
-        Rust = data.license;
+      case "Rust":
+        badge = Rust;
         break;
-      case data.license[5]:
-        WordPress = data.license;
+      case "WordPress":
+        badge = WordPress;
         break;
     }
+    console.log(data);
+
+    return badge;
   }
 }
 
@@ -46,7 +63,36 @@ function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(data) {
+  if (data == "") {
+    return "";
+  } else {
+    var badgeDes = "";
+    switch (data.license) {
+      case "Apache":
+        badgeDes = apacheDes;
+        break;
+      case "GNU":
+        badgeDes = gnuDes;
+        break;
+      case "npm packages":
+        badgeDes = npmPackDes;
+        break;
+      case "OpenBSD":
+        badgeDes = openBSD_Des;
+        break;
+      case "Rust":
+        badgeDes = RustDes;
+        break;
+      case "WordPress":
+        badgeDes = WordPressDes;
+        break;
+    }
+    console.log(data);
+
+    return badgeDes;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -56,7 +102,8 @@ function generateMarkdown(data) {
 
   ## Description
 
-  ${data.description}
+  ${data.description}\n
+  ${renderLicenseBadge(data)}
 
   ## Table of Contents
 
@@ -81,8 +128,8 @@ function generateMarkdown(data) {
 
   ## License
 
-  ${data.license}
-
+  ${renderLicenseSection(data)}
+  
   ## Test
 
   ${data.test}
